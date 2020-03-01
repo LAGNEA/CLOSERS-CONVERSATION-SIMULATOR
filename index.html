@@ -3,27 +3,27 @@
 <html lang="ko">
 <head>
 
-  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager 
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KCJ6Q95');</script>
-<!-- End Google Tag Manager -->
+<End Google Tag Manager -->
 
-<!-- 구글 애널리틱스 시작(웹페이지 접속자 통계 횟수통계) -->
+<!-- 구글 애널리틱스 시작(웹페이지 접속자 통계 횟수통계) 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156922276-1"></script>
 <script>
-    first_Loop();
+  first_Loop();
 </script>
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    gtag('config', 'UA-156922276-1');
+  gtag('config', 'UA-156922276-1');
 </script>
-<!-- 구글 애널리틱스 끝 -->
+구글 애널리틱스 끝 -->
 
 <meta charset="utf-8">
 <title>클로저스 대화창 시뮬레이터</title>
@@ -37,143 +37,143 @@
 
 <body>
  <div class="nav">
-    <dl class="mainTitle">클로저스 대화창 시뮬레이터</dl>
-    <div class="subTitle_Area">
-        <span class="explanation">클로저스 대화창 시뮬레이터로 나만의 이야기를 작성해보세요!</span>
-        <span class="subTitle">beta 0.0.1</span>
-    </div>
+  <dl class="mainTitle">클로저스 대화창 시뮬레이터</dl>
+  <div class="subTitle_Area">
+    <span class="explanation">클로저스 대화창 시뮬레이터로 나만의 이야기를 작성해보세요!</span>
+    <span class="subTitle">beta 0.0.1</span>
+  </div>
 </div>
 
 <div class="content_Area">
-    <div class ="null_Area"> </div>
-    <div class="information_Area">
-        <div class="canvas_Area"> <canvas id="canvas" width="960" height="375"> </canvas> 
-        </div>
-        <div class="character_Area">
-            <div class="character_Area_Detail">
-                <strong> CHR/NPC </strong> 
-                <select name="character_class" id="character_class" onChange="categoryChange(this)" onchange="(updateCanvas()"> 
-                   <option value="">캐릭터/NPC를 선택</option> 
-                   <option value="STRIKER">이세하</option> 
-                   <option value="CASTER">이슬비</option> 
-                   <option value="RANGER">서유리</option> 
-                   <option value="FIGHTER">제이</option> 
-                   <option value="LANCER">미스틸테인</option> 
-                   <option value="HUNTER">나타</option> 
-                   <option value="WITCH">레비아</option> 
-                   <option value="ROGUE">하피</option> 
-                   <option value="ARMS">티나</option> 
-                   <option value="VALKYRIE">바이올렛</option> 
-                   <option value="LIBRARIAN">볼프강 슈나이더</option> 
-                   <option value="AEGIS">루나 아이기스</option> 
-                   <option value="ASTRA">소마</option> 
-                   <option value="MYSTIC">파이 윈체스터</option> 
-                   <option value="BEAST">세트 세크메트</option> 
-                   <option value="NONAME">김철수</option> 
-                   <option value="REAPER">미래</option> 
-                   <option value=""></option> 
-                   <option value="COUNTD">D 백작</option> 
-                   <option value="GREMORY">그레모리</option> 
-                   <option value="KAMYOEN">김가면</option> 
-                   <option value="KITAE">김기태</option> 
-                   <option value="DOYUN">김도윤</option> 
-                   <option value="SIHWAN">김시환</option> 
-                   <option value="YOOJUNG">김유정</option> 
-                   <option value="JAERI">김재리</option> 
-                   <option value="DUST">더스트</option> 
-                   <option value="DAVID">데이비드 리</option> 
-                   <option value="DOGURA">도그라</option> 
-                   <option value="MAGURA">마그라</option> 
-                   <option value="MARIA">마리아</option> 
-                   <option value="MICHAEL">미하엘 폰 키스크</option> 
-                   <option value="SUHYEON">민수현</option> 
-                   <option value="SUHO">민수호</option> 
-                   <option value="SIMHYEON">박심현</option> 
-                   <option value="SMUGGLER">반금련</option> 
-                   <option value="VERONICA">베로니카</option> 
-                   <option value="XIAOLIN">샤오린</option> 
-                   <option value="ALPHAQUEEN">서지수</option> 
-                   <option value="RAN">선우 란</option> 
-                   <option value="SOYOUNG">소영</option> 
-                   <option value="EUNI">송은이</option> 
-                   <option value="AI">쇼그</option> 
-                   <option value="AI2">쇼그2</option> 
-                   <option value="ALRAUNE">숲의 요정 알라우네</option> 
-                   <option value="SHUB">슈브</option> 
-                   <option value="SHUB2">슈브</option> 
-                   <option value="XUE">슈에</option> 
-                   <option value="ARA">아라</option> 
-                   <option value="AOI">아오츠키 아오이</option> 
-                   <option value="ANNA">안나</option> 
-                   <option value="ANNA2">안나</option> 
-                   <option value="ASH">애쉬</option> 
-                   <option value="ALICE">앨리스 와이즈맨</option> 
-                   <option value="UNTOUCHABLE">언터처블</option> 
-                   <option value="OMEGA">오메가 퀸</option> 
-                   <option value="SERIN">오세린</option> 
-                   <option value="UMI">우미</option> 
-                   <option value="JEONGMI">우정미</option> 
-                   <option value="HANA">유하나</option> 
-                   <option value="HANA2">유하나</option> 
-                   <option value="IRINA">이리나 페트로브나</option> 
-                   <option value="IRINA2">이리나 페트로브나</option> 
-                   <option value="BITNA">이빛나</option> 
-                   <option value="MISUK">장미숙</option> 
-                   <option value="SUJI">저수지</option> 
-                   <option value="WOOCHI">전우치</option> 
-                   <option value="DOYEON">정도연</option> 
-                   <option value="MINWOO">채민우</option> 
-                   <option value="BONA">최보나</option> 
-                   <option value="SEOHEE">최서희</option> 
-                   <option value="SEOHEE2">최서희</option> 
-                   <option value="CAMILLA">카밀라</option> 
-                   <option value="KALBACH">칼바크 턱스</option> 
-                   <option value="CAROL">캐롤리엘</option> 
-                   <option value="TONH">통돌이</option> 
-                   <option value="TRAINER">트레이너</option> 
-                   <option value="POLICE">특경대</option> 
-                   <option value="HYDE">하이드</option> 
-                   <option value="SEOCKBONG">한석봉</option> 
-                   <option value="HWISUNG">한휘성</option> 
-                   <option value="HOFFMANN">호프만</option> 
-                   <option value="SIYOUNG">홍시영</option> 
-                   <option value="ALPHAQUEENCLONE">흑지수</option> 
-                   <option value="BITNABLACK">흑화 이빛나</option> 
-                   <option value="DRH">힐데가르트 베이르만</option> 
-                   <option value=""></option> 
-                   <option value="BOYFLY">데르마토비아</option>
-                   <option value="DAVID2">데이비드 리</option>
-                   <option value="VICTOR">빅터</option>
-                   <option value="ASTAROTH">아스타로트</option>
-                   <option value="ASTAROTHWEAPON">아스타로트 웨폰</option>
-                   <option value="SYRPHID">서피드</option>
+  <div class ="null_Area"> </div>
+  <div class="information_Area">
+    <div class="canvas_Area"> <canvas id="canvas" width="960" height="375"> </canvas> 
+    </div>
+    <div class="character_Area">
+      <div class="character_Area_Detail">
+        <strong> CHR/NPC </strong> 
+        <select name="character_class" id="character_class" onChange="categoryChange(this)"> 
+         <option value="">캐릭터/NPC를 선택</option> 
+         <option value="STRIKER">이세하</option> 
+         <option value="CASTER">이슬비</option> 
+         <option value="RANGER">서유리</option> 
+         <option value="FIGHTER">제이</option> 
+         <option value="LANCER">미스틸테인</option> 
+         <option value="HUNTER">나타</option> 
+         <option value="WITCH">레비아</option> 
+         <option value="ROGUE">하피</option> 
+         <option value="ARMS">티나</option> 
+         <option value="VALKYRIE">바이올렛</option> 
+         <option value="LIBRARIAN">볼프강 슈나이더</option> 
+         <option value="AEGIS">루나 아이기스</option> 
+         <option value="ASTRA">소마</option> 
+         <option value="MYSTIC">파이 윈체스터</option> 
+         <option value="BEAST">세트 세크메트</option> 
+         <option value="NONAME">김철수</option> 
+         <option value="REAPER">미래</option> 
+         <option value=""></option> 
+         <option value="COUNTD">D 백작</option> 
+         <option value="GREMORY">그레모리</option> 
+         <option value="KAMYOEN">김가면</option> 
+         <option value="KITAE">김기태</option> 
+         <option value="DOYUN">김도윤</option> 
+         <option value="SIHWAN">김시환</option> 
+         <option value="YOOJUNG">김유정</option> 
+         <option value="JAERI">김재리</option> 
+         <option value="DUST">더스트</option> 
+         <option value="DAVID">데이비드 리</option> 
+         <option value="DOGURA">도그라</option> 
+         <option value="MAGURA">마그라</option> 
+         <option value="MARIA">마리아</option> 
+         <option value="MICHAEL">미하엘 폰 키스크</option> 
+         <option value="SUHYEON">민수현</option> 
+         <option value="SUHO">민수호</option> 
+         <option value="SIMHYEON">박심현</option> 
+         <option value="SMUGGLER">반금련</option> 
+         <option value="VERONICA">베로니카</option> 
+         <option value="XIAOLIN">샤오린</option> 
+         <option value="ALPHAQUEEN">서지수</option> 
+         <option value="RAN">선우 란</option> 
+         <option value="SOYOUNG">소영</option> 
+         <option value="EUNI">송은이</option> 
+         <option value="AI">쇼그</option> 
+         <option value="AI2">쇼그2</option> 
+         <option value="ALRAUNE">숲의 요정 알라우네</option> 
+         <option value="SHUB">슈브</option> 
+         <option value="SHUB2">슈브</option> 
+         <option value="XUE">슈에</option> 
+         <option value="ARA">아라</option> 
+         <option value="AOI">아오츠키 아오이</option> 
+         <option value="ANNA">안나</option> 
+         <option value="ANNA2">안나</option> 
+         <option value="ASH">애쉬</option> 
+         <option value="ALICE">앨리스 와이즈맨</option> 
+         <option value="UNTOUCHABLE">언터처블</option> 
+         <option value="OMEGA">오메가 퀸</option> 
+         <option value="SERIN">오세린</option> 
+         <option value="UMI">우미</option> 
+         <option value="JEONGMI">우정미</option> 
+         <option value="HANA">유하나</option> 
+         <option value="HANA2">유하나</option> 
+         <option value="IRINA">이리나 페트로브나</option> 
+         <option value="IRINA2">이리나 페트로브나</option> 
+         <option value="BITNA">이빛나</option> 
+         <option value="MISUK">장미숙</option> 
+         <option value="SUJI">저수지</option> 
+         <option value="WOOCHI">전우치</option> 
+         <option value="DOYEON">정도연</option> 
+         <option value="MINWOO">채민우</option> 
+         <option value="BONA">최보나</option> 
+         <option value="SEOHEE">최서희</option> 
+         <option value="SEOHEE2">최서희</option> 
+         <option value="CAMILLA">카밀라</option> 
+         <option value="KALBACH">칼바크 턱스</option> 
+         <option value="CAROL">캐롤리엘</option> 
+         <option value="TONH">통돌이</option> 
+         <option value="TRAINER">트레이너</option> 
+         <option value="POLICE">특경대</option> 
+         <option value="HYDE">하이드</option> 
+         <option value="SEOCKBONG">한석봉</option> 
+         <option value="HWISUNG">한휘성</option> 
+         <option value="HOFFMANN">호프만</option> 
+         <option value="SIYOUNG">홍시영</option> 
+         <option value="ALPHAQUEENCLONE">흑지수</option> 
+         <option value="BITNABLACK">흑화 이빛나</option> 
+         <option value="DRH">힐데가르트 베이르만</option> 
+         <option value=""></option> 
+         <option value="BOYFLY">데르마토비아</option>
+         <option value="DAVID2">데이비드 리</option>
+         <option value="VICTOR">빅터</option>
+         <option value="ASTAROTH">아스타로트</option>
+         <option value="ASTAROTHWEAPON">아스타로트 웨폰</option>
+         <option value="SYRPHID">서피드</option>
 
-               </select>
-           </div>
-
-           <div class="character_Area_Detail">
-             <strong> EMOTION </strong>
-             <select name="costume" id="costume" onchange="select_emotion(this.options[this.selectedIndex].value);">
-                <option> </option>
-            </select>
-        </div>
-
-        <div class="character_Area_Detail">
-         <strong> BACKGROUND </strong>
-         <select name="bgImage" id="bgImage" onchange="select_bgImage(this.options[this.selectedIndex].value);"> </select>
+       </select>
      </div>
+
+     <div class="character_Area_Detail">
+       <strong> EMOTION </strong>
+       <select name="costume" id="costume" onchange="select_emotion(this.options[this.selectedIndex].value);">
+        <option> </option>
+      </select>
+    </div>
+
+    <div class="character_Area_Detail">
+     <strong> BACKGROUND </strong>
+     <select name="bgImage" id="bgImage" onchange="select_bgImage(this.options[this.selectedIndex].value);"> </select>
+   </div>
 
  </div> 
 
  <div class="closer_Area">
-    <dl class = "closer_Info">
-        <textarea class="closer_field" id="character_Conversation" onkeyup="inputText(event.keyCode);" onkeyup="inputBackSpace(event.keyCode);" required> </textarea>
-        <label for="character_Conversation" class="closer_label">대화 내용을 입력</label>
-    </dl>   
+  <dl class = "closer_Info">
+    <textarea class="closer_field" id="character_Conversation" onkeyup="inputText(event.keyCode);" onkeyup="inputBackSpace(event.keyCode);" required> </textarea>
+    <label for="character_Conversation" class="closer_label">대화 내용을 입력</label>
+  </dl>   
 </div>
 
 <div class="DL_button">
-    <a class="download_button" download="closers.png" href="" onclick="download_img(this, event);">Download</a> </div>
+  <a class="download_button" download="closers.png" href="" onclick="download_img(this, event);">Download</a> </div>
 </div>
 
 <div class="null_Area"> </div>
@@ -181,20 +181,20 @@
 </div>
 
 <div class="patch_Info">
-    <dl class="text_Area">
-        <span><h2> 안내 </h2></span>
-        <ul>0. 현재 테스트 중입니다. 조만간 정식 배포 예정입니다.</ul>
-        <ul>1. 본 클로저스 대화창 시뮬레이터는 무료로 사용하실 수 있습니다.</ul>
-        <ul>2. 본 시뮬레이터의 제작 및 배포에 있어 상업적인 목적이 없음을 안내드리며, 사용자 또한 상업적인 목적으로 사용하실 수 없습니다.</ul>
-        <ul>3. 해당 시뮬레이터의 악의적인 변조 및 배포는 자제 부탁드립니다. </ul>
-        <ul>4. 시뮬레이터에 대해 의견 또는 문의사항이 있으신 경우, <strong>zuiriya@gmail.com</strong>으로 문의 주시기 바랍니다.</ul>
-    </dl>
+  <dl class="text_Area">
+    <span><h2> 안내 </h2></span>
+    <ul>0. 현재 테스트 중입니다. 조만간 정식 배포 예정입니다.</ul>
+    <ul>1. 본 클로저스 대화창 시뮬레이터는 무료로 사용하실 수 있습니다.</ul>
+    <ul>2. 본 시뮬레이터의 제작 및 배포에 있어 상업적인 목적이 없음을 안내드리며, 사용자 또한 상업적인 목적으로 사용하실 수 없습니다.</ul>
+    <ul>3. 해당 시뮬레이터의 악의적인 변조 및 배포는 자제 부탁드립니다. </ul>
+    <ul>4. 시뮬레이터에 대해 의견 또는 문의사항이 있으신 경우, <strong>zuiriya@gmail.com</strong>으로 문의 주시기 바랍니다.</ul>
+  </dl>
 </div>
 </body>
 
 <script type="text/javascript">
  if(window.addEventListener){
-    window.addEventListener('load', Init, false);
+  window.addEventListener('load', Init, false);
 }
 
 var canvas, ctx
@@ -217,195 +217,195 @@ function inputBackSpace(keyCode){
   if(keyCode == 8 || keyCode == 46){
     clearCanvas();
     updateCanvas(character_Conversation.value,0);
-}      
+  }      
 }
 
 
 function categoryChange(e) {
-    var costume_id = {
-     "기본" : "_BASIC",
-     "기본2" : "_BASIC2",
+  var costume_id = {
+   "기본" : "_BASIC",
+   "기본2" : "_BASIC2",
 
-     "기쁨" : "_JOY",
-     "기쁨2" : "_JOY2",
-     "기쁨3" : "_JOY3",
+   "기쁨" : "_JOY",
+   "기쁨2" : "_JOY2",
+   "기쁨3" : "_JOY3",
 
-     "고통" : "_PAIN",
+   "고통" : "_PAIN",
 
-     "당황" : "_DISS",
+   "당황" : "_DISS",
 
-     "변장" : "_MASKED",
+   "변장" : "_MASKED",
 
-     "부끄러움" : "_SHY",
-     "부끄러움2" : "_SHY2",
-     "부끄러움3" : "_SHY3",
+   "부끄러움" : "_SHY",
+   "부끄러움2" : "_SHY2",
+   "부끄러움3" : "_SHY3",
 
-     "불만" : "_BOO",
-     "충격" : "_SHOCK",
+   "불만" : "_BOO",
+   "충격" : "_SHOCK",
 
-     "슬픔" : "_SORROW",
-     "슬픔2" : "_SORROW2",
+   "슬픔" : "_SORROW",
+   "슬픔2" : "_SORROW2",
 
-     "코피" : "_BLEED",
+   "코피" : "_BLEED",
 
-     "화남" : "_ANGRY",
-     "화남2" : "_ANGRY2",
-     "화남3" : "_ANGRY3",
+   "화남" : "_ANGRY",
+   "화남2" : "_ANGRY2",
+   "화남3" : "_ANGRY3",
 
-     "놀람" : "_OMG",
-     "놀람2" : "_OMG2",
+   "놀람" : "_OMG",
+   "놀람2" : "_OMG2",
 
-     "흑화" : "_BLACK",
+   "흑화" : "_BLACK",
 
-     "만우절-기본" : "_TRANS-BASIC",
-     "만우절-화남" : "_TRANS-ANGRY",
-     "만우절-놀람" : "_TRANS-OMG",
-     "만우절-슬픔" : "_TRANS-SORROW"
+   "만우절-기본" : "_TRANS-BASIC",
+   "만우절-화남" : "_TRANS-ANGRY",
+   "만우절-놀람" : "_TRANS-OMG",
+   "만우절-슬픔" : "_TRANS-SORROW"
  };
 
  var target = document.getElementById("costume");
  var selected_class
     // from ./javascript/character_costumes.js
     switch (e.value) {
-        case "STRIKER": selected_class = STRIKER; break;
-        case "CASTER": selected_class = CASTER; break;
-        case "RANGER": selected_class = RANGER; break;
-        case "FIGHTER": selected_class = FIGHTER; break;
-        case "LANCER": selected_class = LANCER; break;
-        case "HUNTER": selected_class = HUNTER; break;
-        case "WITCH": selected_class = WITCH; break;
-        case "ROGUE": selected_class = ROGUE; break;
-        case "ARMS": selected_class = ARMS; break;
-        case "VALKYRIE": selected_class = VALKYRIE; break;
-        case "LIBRARIAN": selected_class = LIBRARIAN; break;
-        case "AEGIS": selected_class = AEGIS; break;
-        case "ASTRA": selected_class = ASTRA; break;
-        case "MYSTIC": selected_class = MYSTIC; break;
-        case "BEAST": selected_class = BEAST; break;
-        case "NONAME": selected_class = NONAME; break;
-        case "REAPER": selected_class = REAPER; break;
+      case "STRIKER": selected_class = STRIKER; break;
+      case "CASTER": selected_class = CASTER; break;
+      case "RANGER": selected_class = RANGER; break;
+      case "FIGHTER": selected_class = FIGHTER; break;
+      case "LANCER": selected_class = LANCER; break;
+      case "HUNTER": selected_class = HUNTER; break;
+      case "WITCH": selected_class = WITCH; break;
+      case "ROGUE": selected_class = ROGUE; break;
+      case "ARMS": selected_class = ARMS; break;
+      case "VALKYRIE": selected_class = VALKYRIE; break;
+      case "LIBRARIAN": selected_class = LIBRARIAN; break;
+      case "AEGIS": selected_class = AEGIS; break;
+      case "ASTRA": selected_class = ASTRA; break;
+      case "MYSTIC": selected_class = MYSTIC; break;
+      case "BEAST": selected_class = BEAST; break;
+      case "NONAME": selected_class = NONAME; break;
+      case "REAPER": selected_class = REAPER; break;
 
-        case "AI" : selected_class = AI; break;
-        case "AI2" : selected_class = AI2; break;
-        case "ALICE" : selected_class = ALICE; break;
-        case "ALPHAQUEEN" : selected_class = ALPHAQUEEN; break;
-        case "ALPHAQUEENCLONE" : selected_class = ALPHAQUEENCLONE; break;
-        case "ALRAUNE" : selected_class = ALRAUNE; break;
-        case "ANNA" : selected_class = ANNA; break;
-        case "ANNA2" : selected_class = ANNA2; break;
-        case "AOI" : selected_class = AOI; break;
-        case "ARA" : selected_class = ARA; break;
-        case "ASH" : selected_class = ASH; break;
-        case "BITNA" : selected_class = BITNA; break;
-        case "BITNABLACK" : selected_class = BITNABLACK; break;
-        case "BONA" : selected_class = BONA; break;
-        case "CAMILLA" : selected_class = CAMILLA; break;
-        case "CAROL" : selected_class = CAROL; break;
-        case "COUNTD" : selected_class = COUNTD; break;
-        case "DAVID" : selected_class = DAVID; break;
-        case "DOGURA" : selected_class = DOGURA; break;
-        case "DOYEON" : selected_class = DOYEON; break;
-        case "DOYUN" : selected_class = DOYUN; break;
-        case "DRH" : selected_class = DRH; break;
-        case "DUST" : selected_class = DUST; break;
-        case "EUNI" : selected_class = EUNI; break;
-        case "GREMORY" : selected_class = GREMORY; break;
-        case "HANA" : selected_class = HANA; break;
-        case "HANA2" : selected_class = HANA2; break;
-        case "HOFFMANN" : selected_class = HOFFMANN; break;
-        case "HWISUNG" : selected_class = HWISUNG; break;
-        case "HYDE" : selected_class = HYDE; break;
-        case "IRINA" : selected_class = IRINA; break;
-        case "IRINA2" : selected_class = IRINA2; break;
-        case "JAERI" : selected_class = JAERI; break;
-        case "JEONGMI" : selected_class = JEONGMI; break;
-        case "KALBACH" : selected_class = KALBACH; break;
-        case "KAMYOEN" : selected_class = KAMYOEN; break;
-        case "KITAE" : selected_class = KITAE; break;
-        case "MAGURA" : selected_class = MAGURA; break;
-        case "MAIDSERIN" : selected_class = MAIDSERIN; break;
-        case "MARIA" : selected_class = MARIA; break;
-        case "MICHAEL" : selected_class = MICHAEL; break;
-        case "MINWOO" : selected_class = MINWOO; break;
-        case "MISUK" : selected_class = MISUK; break;
-        case "OMEGA" : selected_class = OMEGA; break;
-        case "POLICE" : selected_class = POLICE; break;
-        case "RAN" : selected_class = RAN; break;
-        case "SEOCKBONG" : selected_class = SEOCKBONG; break;
-        case "SEOHEE" : selected_class = SEOHEE; break;
-        case "SEOHEE2" : selected_class = SEOHEE2; break;
-        case "SERIN" : selected_class = SERIN; break;
-        case "SHUB" : selected_class = SHUB; break;
-        case "SHUB2" : selected_class = SHUB2; break;
-        case "SIHWAN" : selected_class = SIHWAN; break;
-        case "SIMHYEON" : selected_class = SIMHYEON; break;
-        case "SIYOUNG" : selected_class = SIYOUNG; break;
-        case "SMUGGLER" : selected_class = SMUGGLER; break;
-        case "SOYOUNG" : selected_class = SOYOUNG; break;
-        case "SUHO" : selected_class = SUHO; break;
-        case "SUHYEON" : selected_class = SUHYEON; break;
-        case "SUJI" : selected_class = SUJI; break;
-        case "TONH" : selected_class = TONH; break;
-        case "TRAINER" : selected_class = TRAINER; break;
-        case "UMI" : selected_class = UMI; break;
-        case "UNTOUCHABLE" : selected_class = UNTOUCHABLE; break;
-        case "VERONICA" : selected_class = VERONICA; break;
-        case "WOOCHI" : selected_class = WOOCHI; break;
-        case "XIAOLIN" : selected_class = XIAOLIN; break;
-        case "XUE" : selected_class = XUE; break;
-        case "YOOJUNG" : selected_class = YOOJUNG; break;
+      case "AI" : selected_class = AI; break;
+      case "AI2" : selected_class = AI2; break;
+      case "ALICE" : selected_class = ALICE; break;
+      case "ALPHAQUEEN" : selected_class = ALPHAQUEEN; break;
+      case "ALPHAQUEENCLONE" : selected_class = ALPHAQUEENCLONE; break;
+      case "ALRAUNE" : selected_class = ALRAUNE; break;
+      case "ANNA" : selected_class = ANNA; break;
+      case "ANNA2" : selected_class = ANNA2; break;
+      case "AOI" : selected_class = AOI; break;
+      case "ARA" : selected_class = ARA; break;
+      case "ASH" : selected_class = ASH; break;
+      case "BITNA" : selected_class = BITNA; break;
+      case "BITNABLACK" : selected_class = BITNABLACK; break;
+      case "BONA" : selected_class = BONA; break;
+      case "CAMILLA" : selected_class = CAMILLA; break;
+      case "CAROL" : selected_class = CAROL; break;
+      case "COUNTD" : selected_class = COUNTD; break;
+      case "DAVID" : selected_class = DAVID; break;
+      case "DOGURA" : selected_class = DOGURA; break;
+      case "DOYEON" : selected_class = DOYEON; break;
+      case "DOYUN" : selected_class = DOYUN; break;
+      case "DRH" : selected_class = DRH; break;
+      case "DUST" : selected_class = DUST; break;
+      case "EUNI" : selected_class = EUNI; break;
+      case "GREMORY" : selected_class = GREMORY; break;
+      case "HANA" : selected_class = HANA; break;
+      case "HANA2" : selected_class = HANA2; break;
+      case "HOFFMANN" : selected_class = HOFFMANN; break;
+      case "HWISUNG" : selected_class = HWISUNG; break;
+      case "HYDE" : selected_class = HYDE; break;
+      case "IRINA" : selected_class = IRINA; break;
+      case "IRINA2" : selected_class = IRINA2; break;
+      case "JAERI" : selected_class = JAERI; break;
+      case "JEONGMI" : selected_class = JEONGMI; break;
+      case "KALBACH" : selected_class = KALBACH; break;
+      case "KAMYOEN" : selected_class = KAMYOEN; break;
+      case "KITAE" : selected_class = KITAE; break;
+      case "MAGURA" : selected_class = MAGURA; break;
+      case "MAIDSERIN" : selected_class = MAIDSERIN; break;
+      case "MARIA" : selected_class = MARIA; break;
+      case "MICHAEL" : selected_class = MICHAEL; break;
+      case "MINWOO" : selected_class = MINWOO; break;
+      case "MISUK" : selected_class = MISUK; break;
+      case "OMEGA" : selected_class = OMEGA; break;
+      case "POLICE" : selected_class = POLICE; break;
+      case "RAN" : selected_class = RAN; break;
+      case "SEOCKBONG" : selected_class = SEOCKBONG; break;
+      case "SEOHEE" : selected_class = SEOHEE; break;
+      case "SEOHEE2" : selected_class = SEOHEE2; break;
+      case "SERIN" : selected_class = SERIN; break;
+      case "SHUB" : selected_class = SHUB; break;
+      case "SHUB2" : selected_class = SHUB2; break;
+      case "SIHWAN" : selected_class = SIHWAN; break;
+      case "SIMHYEON" : selected_class = SIMHYEON; break;
+      case "SIYOUNG" : selected_class = SIYOUNG; break;
+      case "SMUGGLER" : selected_class = SMUGGLER; break;
+      case "SOYOUNG" : selected_class = SOYOUNG; break;
+      case "SUHO" : selected_class = SUHO; break;
+      case "SUHYEON" : selected_class = SUHYEON; break;
+      case "SUJI" : selected_class = SUJI; break;
+      case "TONH" : selected_class = TONH; break;
+      case "TRAINER" : selected_class = TRAINER; break;
+      case "UMI" : selected_class = UMI; break;
+      case "UNTOUCHABLE" : selected_class = UNTOUCHABLE; break;
+      case "VERONICA" : selected_class = VERONICA; break;
+      case "WOOCHI" : selected_class = WOOCHI; break;
+      case "XIAOLIN" : selected_class = XIAOLIN; break;
+      case "XUE" : selected_class = XUE; break;
+      case "YOOJUNG" : selected_class = YOOJUNG; break;
 
-        case "BOYFLY" : selected_class = BOYFLY; break;
-        case "DAVID2" : selected_class = DAVID2; break;
-        case "VICTOR" : selected_class = VICTOR; break;
-        case "ASTAROTH" : selected_class = ASTAROTH; break;
-        case "ASTAROTHWEAPON" : selected_class = ASTAROTHWEAPON; break;
-        case "SYRPHID" : selected_class = SYRPHID; break;
+      case "BOYFLY" : selected_class = BOYFLY; break;
+      case "DAVID2" : selected_class = DAVID2; break;
+      case "VICTOR" : selected_class = VICTOR; break;
+      case "ASTAROTH" : selected_class = ASTAROTH; break;
+      case "ASTAROTHWEAPON" : selected_class = ASTAROTHWEAPON; break;
+      case "SYRPHID" : selected_class = SYRPHID; break;
 
     }
     target.options.length = 0;
 
     for (index in selected_class) {
-        var opt = document.createElement("option");
-        var value = e.value + costume_id[selected_class[index].split(" [")[0]];
-        switch (selected_class[index].substring(selected_class[index].indexOf('[') + 1, selected_class[index].indexOf(']'))) {
-         case"BASIC":valus+="_BASIC";break;
-         case"BASIC2":valus+="_BASIC2";break;
-         case"JOY":valus+="_JOY";break;
-         case"JOY2":valus+="_JOY2";break;
-         case"JOY3":valus+="_JOY3";break;
-         case"PAIN":valus+="_PAIN";break;
-         case"DISS":valus+="_DISS";break;
-         case"MASKED":valus+="_MASKED";break;
-         case"SHY":valus+="_SHY";break;
-         case"SHY2":valus+="_SHY2";break;
-         case"SHY3":valus+="_SHY3";break;
-         case"BOO":valus+="_BOO";break;
-         case"SHOCK":valus+="_SHOCK";break;
-         case"SORROW":valus+="_SORROW";break;
-         case"SORROW2":valus+="_SORROW2";break;
-         case"BLEED":valus+="_BLEED";break;
-         case"ANGRY":valus+="_ANGRY";break;
-         case"ANGRY2":valus+="_ANGRY2";break;
-         case"ANGEY3":valus+="_ANGEY3";break;
-         case"OMG":valus+="_OMG";break;
-         case"OMG2":valus+="_OMG2";break;
-         case"BLACK":valus+="_BLACK";break;
+      var opt = document.createElement("option");
+      var value = e.value + costume_id[selected_class[index].split(" [")[0]];
+      switch (selected_class[index].substring(selected_class[index].indexOf('[') + 1, selected_class[index].indexOf(']'))) {
+       case"BASIC":valus+="_BASIC";break;
+       case"BASIC2":valus+="_BASIC2";break;
+       case"JOY":valus+="_JOY";break;
+       case"JOY2":valus+="_JOY2";break;
+       case"JOY3":valus+="_JOY3";break;
+       case"PAIN":valus+="_PAIN";break;
+       case"DISS":valus+="_DISS";break;
+       case"MASKED":valus+="_MASKED";break;
+       case"SHY":valus+="_SHY";break;
+       case"SHY2":valus+="_SHY2";break;
+       case"SHY3":valus+="_SHY3";break;
+       case"BOO":valus+="_BOO";break;
+       case"SHOCK":valus+="_SHOCK";break;
+       case"SORROW":valus+="_SORROW";break;
+       case"SORROW2":valus+="_SORROW2";break;
+       case"BLEED":valus+="_BLEED";break;
+       case"ANGRY":valus+="_ANGRY";break;
+       case"ANGRY2":valus+="_ANGRY2";break;
+       case"ANGEY3":valus+="_ANGEY3";break;
+       case"OMG":valus+="_OMG";break;
+       case"OMG2":valus+="_OMG2";break;
+       case"BLACK":valus+="_BLACK";break;
 
-         case"TRANS-BASIC":valus+="_TRANS-BASIC";break;
-         case"TRANS-OMG":valus+="_TRANS-OMG";break;
-         case"TRANS-SORROW":valus+="_TRANS-SORROW";break;
-         case"TRANS-ANGRY":valus+="_TRANS-ANGRY";break;
-        
+       case"TRANS-BASIC":valus+="_TRANS-BASIC";break;
+       case"TRANS-OMG":valus+="_TRANS-OMG";break;
+       case"TRANS-SORROW":valus+="_TRANS-SORROW";break;
+       case"TRANS-ANGRY":valus+="_TRANS-ANGRY";break;
+
      }
      opt.value = value;
      opt.innerHTML = selected_class[index];
      target.appendChild(opt);
+   }
  }
-}
 
-var bgImage = document.getElementById("bgImage");
-for(var bg_i = 0, bg_l = bg_options.length; bg_i < bg_l; bg_i++){
+ var bgImage = document.getElementById("bgImage");
+ for(var bg_i = 0, bg_l = bg_options.length; bg_i < bg_l; bg_i++){
   var bg_option = bg_options[bg_i];
   bgImage.options.add( new Option(bg_option.bg_Text, bg_option.bg_Value, bg_option.selected) );
 }
@@ -414,70 +414,64 @@ for(var bg_i = 0, bg_l = bg_options.length; bg_i < bg_l; bg_i++){
 var img = new Image();
 var img_BG = new Image();
 var img_TALK = new Image();
+img_TALK.src = "image/COMMON/TALK.png";
 
 img_TALK.onload = function() {
-    if (ctx !== null && ctx !== undefined) {
-        clearCanvas();
-        drawImage();
-        drawText();
-    }
+  clearCanvas();
+  drawImage();
+  drawText();
+  
 }
 img_BG.onload = function() {
-    if (ctx !== null && ctx !== undefined) {
-        clearCanvas();
-        drawImage();
-        drawText();
-    }
-}
-
-img.onload = function() {
- if (ctx !== null && ctx !== undefined) {
-    clearCanvas();
-    drawImage();
-    drawText();
-}
+  clearCanvas();
+  drawImage();
+  drawText();
 }
 
 function drawImage() {
-    ctx.drawImage(img_BG,0,-20)
-    img_TALK.src = "image/COMMON/TALK.png";
-    ctx.drawImage(img_TALK,0,0)
-    ctx.drawImage(img,-30, 0)
+  ctx.drawImage(img_BG,0,-20)
+  ctx.drawImage(img_TALK,0,0)
+  ctx.drawImage(img,-30, 0)
 }
 
 function select_emotion(character_class){
-    var strArray = character_class.split('_')
-    img.src = "image/" + "CHR_NPC/" + character_class + ".png"
-    
+  
+  img.src = "image/" + "CHR_NPC/" + character_class + ".png"
+  img.onload = function() {
+    clearCanvas();
+    drawImage();
+    drawText();
+  }  
 }
 
 function select_bgImage(bg_Value) {
-   img_BG.src = "image/BG/" + bg_Value + ".png"
-   img_BG.onload = function() {
-      drawImage();
-      drawText();
-  }
+ img_BG.src = "image/BG/" + bg_Value + ".png"
+ img_BG.onload = function() {
+   clearCanvas();
+   drawImage();
+   drawText();
+ }
 }
 
 function drawText() {    
-    ctx.font="14.3px NanumBarunGothic";
-    ctx.lineWidth = 1;
-    ctx.fillStyle = "white";
-    ctx.textAlign = "left";
-    ctx.shadowBlur = 10;
-    ctx.shadowColor = "black";
-    ctx.fillStyle = "rgb(255,210,0)";
+  ctx.font="14.3px NanumBarunGothic";
+  ctx.lineWidth = 1;
+  ctx.fillStyle = "white";
+  ctx.textAlign = "left";
+  ctx.shadowBlur = 10;
+  ctx.shadowColor = "black";
+  ctx.fillStyle = "rgb(255,210,0)";
 
-    characterNAME = document.getElementById("character_class");
-    ctx.strokeText(characterNAME.options[characterNAME.selectedIndex].text, 343, 200);
-    ctx.fillText(characterNAME.options[characterNAME.selectedIndex].text, 343, 200);
-    
-    ctx.fillStyle = "rgb(255,255,255)";
-    const lines = document.getElementById("character_Conversation").value.split('\n');
-    lines.forEach((conversation_Line, conversation_Index) => {
-        ctx.strokeText(conversation_Line, 343, 232+(conversation_Index*23));
-        ctx.fillText(conversation_Line, 343, 232+(conversation_Index*23));
-    });
+  characterNAME = document.getElementById("character_class");
+  ctx.strokeText(characterNAME.options[characterNAME.selectedIndex].text, 343, 200);
+  ctx.fillText(characterNAME.options[characterNAME.selectedIndex].text, 343, 200);
+
+  ctx.fillStyle = "rgb(255,255,255)";
+  const lines = document.getElementById("character_Conversation").value.split('\n');
+  lines.forEach((conversation_Line, conversation_Index) => {
+    ctx.strokeText(conversation_Line, 343, 232+(conversation_Index*23));
+    ctx.fillText(conversation_Line, 343, 232+(conversation_Index*23));
+  });
 }
 
 /*
@@ -502,8 +496,8 @@ drawText();
 }
 
 function clearCanvas() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawImage();
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawImage();
 }
 
 function download_img(el, event) {
@@ -514,11 +508,11 @@ function download_img(el, event) {
         let imageBlob = canvas.msToBlob()
         let downloadName = 'closers.png'
         window.navigator.msSaveBlob(imageBlob, downloadName)
-    } else {
+      } else {
         let imageURI = canvas.toDataURL("image/png");
         el.href = imageURI;
+      }
     }
-}
-</script>
+  </script>
 
-</html>
+  </html>
