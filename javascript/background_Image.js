@@ -23,7 +23,7 @@ var bg_options = [
 { "bg_Text" : "방과 후의 미궁", "bg_Value" : "A3_SPECIAL"},
 { "bg_Text" : "불타는 강남 광장", "bg_Value" : "A4_S1"},
 { "bg_Text" : "차원간섭 발생지", "bg_Value" : "A4_S2"},
-{ "bg_Text" : "강남 대료변", "bg_Value" : "A4_S3"},
+{ "bg_Text" : "강남 대로변", "bg_Value" : "A4_S3"},
 { "bg_Text" : "공중 정찰로", "bg_Value" : "A4_S4"},
 { "bg_Text" : "오염된 시가지", "bg_Value" : "A4_S5"},
 { "bg_Text" : "헬리포트", "bg_Value" : "A4_S6"},
