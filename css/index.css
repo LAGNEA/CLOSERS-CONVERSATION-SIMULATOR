@@ -8,8 +8,11 @@
   font-weight: normal;
 }
 
-/* 레이아웃 스타일링 */
+body {
+  font-family: "NanumBarunGothic";
+}
 
+/* 레이아웃 스타일링 */
 
 .nav {
   width: 100%;
@@ -48,25 +51,20 @@
   width: 95%;
   } */
 
-  .null_Area {
-    margin-right: auto;
-    margin-left: auto;
-  }
-
   .information_Area {
     width:960;
   }
   .content_Area {
-    display: flex;
-    align-items: center;
-    text-align: center;
+
+    margin-left: auto;
+    margin-right: auto;
     /* 100% - top nav height - bottom patch_info height(+border width) */
     
   }
 
   .character_Area {
     margin-top: 1rem;
-    display: flex;
+    
   }
 
   .character_Info {
@@ -139,9 +137,7 @@
 
 
   /* 기본 정보 스타일링 */
-  body {
-    font-family: "NanumBarunGothic";
-  }
+
   canvas {
     width: 960px;
     height: 375px;
@@ -189,7 +185,7 @@
   }
 
   .closer_Area {
-    display: flex;
+
    margin-top: 1rem; 
  }
  .closer_field {
@@ -438,4 +434,6 @@ label input[type=checkbox].loading_Active:checked::after {
     border-radius: 10%;
     margin-right: 8px;
   }
+
+
   </style>

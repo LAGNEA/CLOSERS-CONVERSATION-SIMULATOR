@@ -25,7 +25,8 @@
 </script>
 구글 애널리틱스 끝 -->
 
-<meta charset="utf-8">
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
+
 <title>클로저스 대화창 시뮬레이터</title>
 
 <link rel="stylesheet" href="./css/reset.css"/>
@@ -40,12 +41,11 @@
   <dl class="mainTitle">클로저스 대화창 시뮬레이터</dl>
   <div class="subTitle_Area">
     <span class="explanation">클로저스 대화창 시뮬레이터로 나만의 이야기를 작성해보세요!</span>
-    <span class="subTitle">beta 0.0.1</span>
+    <span class="subTitle">beta 0.0.2</span>
   </div>
 </div>
 
 <div class="content_Area">
-  <div class ="null_Area"> </div>
   <div class="information_Area">
     <div class="canvas_Area"> <canvas id="canvas" width="960" height="375"> </canvas> 
     </div>
@@ -126,27 +126,35 @@
          <option value="BONA">최보나</option> 
          <option value="SEOHEE">최서희</option> 
          <option value="SEOHEE2">최서희</option> 
+         <option value="KADHIM">카딤</option>
          <option value="CAMILLA">카밀라</option> 
          <option value="KALBACH">칼바크 턱스</option> 
          <option value="CAROL">캐롤리엘</option> 
-         <option value="TONG">통돌이</option> 
+         <option value="TONH">통돌이</option> 
          <option value="TRAINER">트레이너</option> 
          <option value="POLICE">특경대</option> 
          <option value="HYDE">하이드</option> 
+         <option value="GINAM">한기남</option>
+         <option value="GINAM2">한기남2</option>
          <option value="SEOCKBONG">한석봉</option> 
          <option value="HWISUNG">한휘성</option> 
          <option value="HOFFMANN">호프만</option> 
          <option value="SIYOUNG">홍시영</option> 
          <option value="ALPHAQUEENCLONE">흑지수</option> 
          <option value="BITNABLACK">흑화 이빛나</option> 
+         <option value="HEEMANG">희망</option>
          <option value="DRH">Dr.H</option> 
          <option value=""></option> 
          <option value="BOYFLY">데르마토비아</option>
+         <option value="DEVYJONE">데비 존</option>
          <option value="DAVID2">데이비드 리</option>
+         <option value="LORELEI">로렐라이</option>
          <option value="VICTOR">빅터</option>
+         <option value="ASMODEUS">아스모데우스</option>
          <option value="ASTAROTH">아스타로트</option>
          <option value="ASTAROTHWEAPON">아스타로트 웨폰</option>
          <option value="SYRPHID">서피드</option>
+         <option value="PLOP">플로프</option>
 
        </select>
      </div>
@@ -169,14 +177,32 @@
   <dl class = "closer_Info">
     <textarea class="closer_field" id="character_Conversation" onkeyup="inputText(event.keyCode);" onkeyup="inputBackSpace(event.keyCode);" required> </textarea>
     <label for="character_Conversation" class="closer_label">대화 내용을 입력</label>
-  </dl>   
+  </dl>
+  
+  <dl class = "closer_Info" style="display:none" id="quest_Info">
+    <input type="input" class="closer_field" id="character_Quest" onkeyup="inputText(event.keyCode);" onkeyup="inputBackSpace(event.keyCode);" required /> 
+    <label for="character_Quest" class="closer_label">퀘스트 이름을 입력</label>
+  </dl>
+
+</div>
+
+<div class = "ZXZ_Select_Area">
+  대화창 넘김 UI
+  <input type="radio" id="ZXZ_Select_None" value="none" name="ZXZ_Select" onclick="drawZXZ();" checked/> <lavel for="ZXZ_Select_None">표시 안함</lavel>
+  <input type="radio" id="ZXZ_Select_Next" value="next" name="ZXZ_Select"onclick="drawZXZ();"/> <lavel for="ZXZ_Select_Next">다음</lavel>
+  <input type="radio" id="ZXZ_Select_Finish" value="finish" name="ZXZ_Select"onclick="drawZXZ();"/> <lavel for="ZXZ_Select_Finish">퀘스트 완료</lavel>
+</div>
+
+<div class = "quest_Select_Area">
+  퀘스트 UI
+  <input type="radio" id="quest_Select_None" value="none" name="quest_Select" onclick="drawQuest();"checked/> <lavel for="quest_Select_None">표시 안함</lavel>
+  <input type="radio" id="quest_Select_Display" value="dlsplay" name="quest_Select" onclick="drawQuest();"/> <lavel for="quest_Select_Display">표시</lavel>
 </div>
 
 <div class="DL_button">
   <a class="download_button" download="closers.png" href="" onclick="download_img(this, event);">Download</a> </div>
 </div>
 
-<div class="null_Area"> </div>
 </div>
 </div>
 
@@ -198,18 +224,17 @@
 }
 
 var canvas, ctx
-var character_Conversation, characterNAME
+var character_Conversation, characterNAME, character_Quest
 var isFill = true;
 
 function Init() {
   canvas = document.getElementById('canvas');
   ctx = canvas.getContext("2d");
   character_Conversation = document.getElementById('character_Conversation');
-
 }
 
 function inputText(keyCode){   
-  var textWidth = ctx.measureText(character_Conversation.value).width;     
+  var textWidth = ctx.measureText(character_Conversation.value).width;
   updateCanvas(String.fromCharCode(keyCode), textWidth);     
 }    
 
@@ -255,6 +280,7 @@ function categoryChange(e) {
    "놀람" : "_OMG",
    "놀람2" : "_OMG2",
 
+   "노래" : "_SONG",
    "흑화" : "_BLACK",
 
    "만우절-기본" : "_TRANS-BASIC",
@@ -284,6 +310,7 @@ function categoryChange(e) {
       case "BEAST": selected_class = BEAST; break;
       case "NONAME": selected_class = NONAME; break;
       case "REAPER": selected_class = REAPER; break;
+      case "KNIVES": selected_class = KNIVES; break;
 
       case "AI" : selected_class = AI; break;
       case "AI2" : selected_class = AI2; break;
@@ -309,9 +336,12 @@ function categoryChange(e) {
       case "DRH" : selected_class = DRH; break;
       case "DUST" : selected_class = DUST; break;
       case "EUNI" : selected_class = EUNI; break;
+      case "GINAM" : selected_class = GINAM; break;
+      case "GINAM2" : selected_class = GINAM2; break;
       case "GREMORY" : selected_class = GREMORY; break;
       case "HANA" : selected_class = HANA; break;
       case "HANA2" : selected_class = HANA2; break;
+      case "HEEMANG" : selected_class = HEEMANG; break;      
       case "HOFFMANN" : selected_class = HOFFMANN; break;
       case "HWISUNG" : selected_class = HWISUNG; break;
       case "HYDE" : selected_class = HYDE; break;
@@ -319,6 +349,7 @@ function categoryChange(e) {
       case "IRINA2" : selected_class = IRINA2; break;
       case "JAERI" : selected_class = JAERI; break;
       case "JEONGMI" : selected_class = JEONGMI; break;
+      case "KADHIM" : selected_class = KADHIM; break;
       case "KALBACH" : selected_class = KALBACH; break;
       case "KAMYOEN" : selected_class = KAMYOEN; break;
       case "KITAE" : selected_class = KITAE; break;
@@ -345,7 +376,7 @@ function categoryChange(e) {
       case "SUHO" : selected_class = SUHO; break;
       case "SUHYEON" : selected_class = SUHYEON; break;
       case "SUJI" : selected_class = SUJI; break;
-      case "TONG" : selected_class = TONG; break;
+      case "TONH" : selected_class = TONH; break;
       case "TRAINER" : selected_class = TRAINER; break;
       case "UMI" : selected_class = UMI; break;
       case "UNTOUCHABLE" : selected_class = UNTOUCHABLE; break;
@@ -355,14 +386,18 @@ function categoryChange(e) {
       case "XUE" : selected_class = XUE; break;
       case "YOOJUNG" : selected_class = YOOJUNG; break;
 
-      case "BOYFLY" : selected_class = BOYFLY; break;
-      case "DAVID2" : selected_class = DAVID2; break;
-      case "VICTOR" : selected_class = VICTOR; break;
+      case "ASMODEUS" : selected_class = ASMODEUS; break;
       case "ASTAROTH" : selected_class = ASTAROTH; break;
       case "ASTAROTHWEAPON" : selected_class = ASTAROTHWEAPON; break;
+      case "BOYFLY" : selected_class = BOYFLY; break;
+      case "DEVYJONE" : selected_class = DEVYJONE; break;
+      case "DAVID2" : selected_class = DAVID2; break;
+      case "LORELEI" : selected_class = LORELEI; break;                  
+      case "PLOP" : selected_class = PLOP; break;                  
       case "SYRPHID" : selected_class = SYRPHID; break;
-
+      case "VICTOR" : selected_class = VICTOR; break;      
     }
+
     target.options.length = 0;
 
     for (index in selected_class) {
@@ -390,6 +425,7 @@ function categoryChange(e) {
        case"ANGEY3":valus+="_ANGEY3";break;
        case"OMG":valus+="_OMG";break;
        case"OMG2":valus+="_OMG2";break;
+       case"SONG":valus+="_SONG";break;
        case"BLACK":valus+="_BLACK";break;
 
        case"TRANS-BASIC":valus+="_TRANS-BASIC";break;
@@ -414,45 +450,88 @@ function categoryChange(e) {
 var img = new Image();
 var img_BG = new Image();
 var img_TALK = new Image();
-img_TALK.src = "image/COMMON/TALK.png";
+var img_QUEST = new Image();
+var img_UI = new Image();
+
+function drawUI() {
+  img_TALK.src = "image/COMMON/TALK.png";
+  img_UI.src = "image/COMMON/UI.png";
+//img_TALK.src = "image/COMMON/test.png";
+}
 
 img_TALK.onload = function() {
-  clearCanvas();
-  drawImage();
-  drawText();
-  
+  updateCanvas();
 }
-img_BG.onload = function() {
-  clearCanvas();
-  drawImage();
-  drawText();
+img_QUEST.onload = function() {
+  updateCanvas();
+}
+img_UI.onload = function() {
+  updateCanvas();
 }
 
 function drawImage() {
   ctx.drawImage(img_BG,0,-20)
-  ctx.drawImage(img_TALK,0,0)
+  //ctx.drawImage(img_TALK,0,0)
+  ctx.drawImage(img_TALK,0,5)
   ctx.drawImage(img,-30, 0)
 }
 
 function select_emotion(character_class){
-  
   img.src = "image/" + "CHR_NPC/" + character_class + ".png"
   img.onload = function() {
-    clearCanvas();
-    drawImage();
-    drawText();
+    updateCanvas();
   }  
 }
 
 function select_bgImage(bg_Value) {
  img_BG.src = "image/BG/" + bg_Value + ".png"
  img_BG.onload = function() {
-   clearCanvas();
-   drawImage();
-   drawText();
- }
+  updateCanvas();}
 }
 
+function drawZXZ() {
+  ctx.font="12px NanumBarunGothic";
+  ctx.lineWidth = 1;
+  ctx.fillStyle = "white";
+  ctx.textAlign="center";
+  ctx.shadowBlur = 10;
+  ctx.shadowColor = "black";
+  ctx.fillStyle = "rgb(255,255,255)";
+
+  if(ZXZ_Select_Next.checked) {
+    ctx.drawImage(img_UI,-7,0);
+    ctx.strokeText("다음(Z)", canvas.width/2, 348);
+    ctx.fillText("다음(Z)", canvas.width/2, 348);
+    ctx.textAlign="left";
+    ctx.font="10.7px NanumBarunGothic";
+    ctx.strokeText("대화 즉시 완료(X)", 632, 348);
+    ctx.fillText("대화 즉시 완료(X)", 632, 348);
+  } 
+
+  if(ZXZ_Select_Finish.checked) {
+    ctx.drawImage(img_UI,-7,0);
+    ctx.strokeText("퀘스트 완료(Z)", canvas.width/2, 348);
+    ctx.fillText("퀘스트 완료(Z)", canvas.width/2, 348);
+    ctx.textAlign="left";
+    ctx.font="10.7px NanumBarunGothic";
+    ctx.strokeText("대화 즉시 완료(X)", 632, 348);
+    ctx.fillText("대화 즉시 완료(X)", 632, 348);
+  }
+}
+
+function drawQuest() {
+  if(quest_Select_Display.checked) {
+    document.getElementById("quest_Info").style.display="block";
+
+    img_QUEST.src = "image/COMMON/QUEST.png";
+    ctx.drawImage(img_QUEST,0,0)
+  }
+  else {
+    document.getElementById("quest_Info").style.display="none";
+    document.getElementById("character_Quest").value= "";
+    
+  }
+}
 function drawText() {    
   ctx.font="14.3px NanumBarunGothic";
   ctx.lineWidth = 1;
@@ -467,11 +546,18 @@ function drawText() {
   ctx.fillText(characterNAME.options[characterNAME.selectedIndex].text, 343, 200);
 
   ctx.fillStyle = "rgb(255,255,255)";
+  
   const lines = document.getElementById("character_Conversation").value.split('\n');
   lines.forEach((conversation_Line, conversation_Index) => {
-    ctx.strokeText(conversation_Line, 343, 232+(conversation_Index*23));
-    ctx.fillText(conversation_Line, 343, 232+(conversation_Index*23));
+    ctx.strokeText(conversation_Line, 343, 236+(conversation_Index*23));
+    ctx.fillText(conversation_Line, 343, 236+(conversation_Index*23));
   });
+  ctx.textAlign="center";
+  ctx.font="13px NanumBarunGothic";
+  character_Quest = document.getElementById("character_Quest").value;
+  ctx.strokeText(character_Quest, canvas.width/2, 161);
+  ctx.fillText(character_Quest, canvas.width/2, 161);
+
 }
 
 /*
@@ -492,6 +578,9 @@ function updateCanvas() {
 //  drawText_realtime();
 clearCanvas();
 drawImage();
+drawUI();
+drawZXZ();
+drawQuest();
 drawText();
 }
 
