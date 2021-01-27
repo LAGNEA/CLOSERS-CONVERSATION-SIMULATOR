@@ -62,6 +62,7 @@ var bg_options = [
 { "bg_Text" : "사냥터지기 성(사냥터지기)", "bg_Value" : "A9_H1"},
 { "bg_Text" : "노을의 고성", "bg_Value" : "A9_H2"},
 { "bg_Text" : "성의 정원", "bg_Value" : "A9_H3"},
+{ "bg_Text" : "부산-남포동", "bg_Value" : "A10_TOWN"},
 { "bg_Text" : "BIMF광장 낮", "bg_Value" : "A10_S1"},
 { "bg_Text" : "옥상공원 낮", "bg_Value" : "A10_S2"},
 { "bg_Text" : "광안대교 낮", "bg_Value" : "A10_S3"},
@@ -71,11 +72,15 @@ var bg_options = [
 { "bg_Text" : "BIMF광장 : 불신", "bg_Value" : "A10_S8"},
 { "bg_Text" : "감만부두 : 의심", "bg_Value" : "A10_S9"},
 { "bg_Text" : "광안대교 : 폐목", "bg_Value" : "A10_S10"},
+{ "bg_Text" : "몽환세계 : 연무극장", "bg_Value" : "A11_TOWN_A"},
+{ "bg_Text" : "몽환세계 : 연무극장 <<이면>>", "bg_Value" : "A11_TOWN_B"},
+{ "bg_Text" : "고룡 유적지", "bg_Value" : "A12_TOWN"},
 { "bg_Text" : "이벤트 : 할로윈(필드)", "bg_Value" : "E_HALLOWEEN"},
 { "bg_Text" : "이벤트 : 할로윈(사냥꾼의 밤)", "bg_Value" : "E_HALLOWEEN2"},
 { "bg_Text" : "이벤트 : 여름바다", "bg_Value" : "E_HOT"},
 { "bg_Text" : "이벤트 : 2018봄", "bg_Value" : "E_MAY"},
 { "bg_Text" : "이벤트 : 발렌타인", "bg_Value" : "E_VALENTINE"},
 { "bg_Text" : "이벤트 : 4월", "bg_Value" : "E_APRIL"},
-{ "bg_Text" : "마이룸", "bg_Value" : "E_MYROOM"} 
+{ "bg_Text" : "마이룸", "bg_Value" : "E_MYROOM"},
+{ "bg_Text" : "이벤트 : 도서관", "bg_Value" : "E_LIBRARY"} 
 ]
