@@ -53,8 +53,8 @@
       <div class="character_Area_Detail">
         <strong> CHR/NPC </strong> 
         <select name="character_class" id="character_class" onChange="categoryChange(this)"> 
-         <option value="">캐릭터/NPC를 선택</option> 
-         <option value=""></option>
+         <option value="NULL_IMAGE">캐릭터/NPC를 선택</option> 
+         <option value="NULL_IMAGE"></option>
          <option value="STRIKER">이세하</option> 
          <option value="CASTER">이슬비</option> 
          <option value="RANGER">서유리</option> 
@@ -74,7 +74,7 @@
          <option value="REAPER">미래</option> 
          <option value="KNIVES">은하</option> 
          <option value="ALTEREGO">루시</option> 
-         <option value=""></option> 
+         <option value="NULL_IMAGE"></option> 
          <option value="COUNTD">D 백작</option> 
          <option value="GREMORY">그레모리</option> 
          <option value="KAMYOEN">김가면</option> 
@@ -153,7 +153,7 @@
          <option value="BITNABLACK">흑화 이빛나</option> 
          <option value="HEEMANG">희망</option>
          <option value="DRH">Dr.H</option> 
-         <option value=""></option> 
+         <option value="NULL_IMAGE"></option> 
          <option value="BOYFLY">데르마토비아</option>
          <option value="DEVY_JONE">데비 존</option>
          <option value="DAVID2">데이비드 리</option>
@@ -307,6 +307,10 @@ function categoryChange(e) {
  var selected_class
     // from ./javascript/character_costumes.js
     switch (e.value) {
+      case "NULL_IMAGE": selected_class = NULL_IMAGE; break;
+
+      case "STRIKER": selected_class = STRIKER; break;
+
       case "STRIKER": selected_class = STRIKER; break;
       case "CASTER": selected_class = CASTER; break;
       case "RANGER": selected_class = RANGER; break;
