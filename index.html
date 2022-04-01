@@ -207,6 +207,11 @@
   <input type="radio" id="quest_Select_None" value="none" name="quest_Select" onclick="drawQuest();"checked/> <lavel for="quest_Select_None">표시 안함</lavel>
   <input type="radio" id="quest_Select_Display" value="dlsplay" name="quest_Select" onclick="drawQuest();"/> <lavel for="quest_Select_Display">표시</lavel>
 </div>
+<div class = "text_color_Area">
+  텍스트 색상 변경(주황색)
+  <input type="radio" id="text_White" value="none" name="text_Color" checked/> <lavel for="text_White">하얀색</lavel>
+  <input type="radio" id="text_orange" value="dlsplay" name="text_Color"/> <lavel for="text_orange">주황색</lavel>
+</div>
 
 <div class="DL_button">
   <a class="download_button" download="closers.png" href="" onclick="download_img(this, event);">Download</a> </div>
@@ -330,6 +335,7 @@ function categoryChange(e) {
       case "ALRAUNE" : selected_class = ALRAUNE; break;
       case "ANNA" : selected_class = ANNA; break;
       case "ANNA2" : selected_class = ANNA2; break;
+      case "SOOYEON" : selected_class = SOOYEON; break;
       case "AOI" : selected_class = AOI; break;
       case "ARA" : selected_class = ARA; break;
       case "ASH" : selected_class = ASH; break;
@@ -366,6 +372,11 @@ function categoryChange(e) {
       case "MAGURA" : selected_class = MAGURA; break;
       case "MAIDSERIN" : selected_class = MAIDSERIN; break;
       case "MARIA" : selected_class = MARIA; break;
+      case "MUSCLE_RANGER_RED" : selected_class = MUSCLE_RANGER_RED; break;
+      case "MUSCLE_RANGER_BLUE" : selected_class = MUSCLE_RANGER_BLUE; break;
+      case "MUSCLE_RANGER_GREEN" : selected_class = MUSCLE_RANGER_GREEN; break;
+      case "MUSCLE_RANGER_PINK" : selected_class = MUSCLE_RANGER_PINK; break;
+      case "MUSCLE_RANGER_YELLOW" : selected_class = MUSCLE_RANGER_YELLOW; break;
       case "MICHAEL" : selected_class = MICHAEL; break;
       case "MINWOO" : selected_class = MINWOO; break;
       case "MISUK" : selected_class = MISUK; break;
@@ -538,10 +549,24 @@ function drawQuest() {
   }
   else {
     document.getElementById("quest_Info").style.display="none";
-    document.getElementById("character_Quest").value= "";
-    
+    document.getElementById("character_Quest").value= ""; 
   }
 }
+
+/*
+function colorChange() {
+  if(text_orange.checked) {
+    ctx.fillStyle = "rgb(245,154,63)";
+  }
+  else {
+   ctx.fillStyle = "rgb(255,255,255)"; 
+  }
+}
+*/
+function colorChange() {
+
+  }
+
 function drawText() {    
   ctx.font="14.3px NanumBarunGothic";
   ctx.lineWidth = 1;
@@ -555,7 +580,13 @@ function drawText() {
   ctx.strokeText(characterNAME.options[characterNAME.selectedIndex].text, 343, 200);
   ctx.fillText(characterNAME.options[characterNAME.selectedIndex].text, 343, 200);
 
-  ctx.fillStyle = "rgb(255,255,255)";
+if(text_orange.checked) {
+    ctx.fillStyle = "rgb(245,154,63)";
+  }
+  else {
+   ctx.fillStyle = "rgb(255,255,255)"; 
+  }
+  //ctx.fillStyle = "rgb(255,255,255)";
   
   const lines = document.getElementById("character_Conversation").value.split('\n');
   lines.forEach((conversation_Line, conversation_Index) => {
