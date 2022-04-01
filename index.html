@@ -574,7 +574,6 @@ function colorChange() {
 function drawText() {    
   ctx.font="14.3px NanumBarunGothic";
   ctx.lineWidth = 1;
-  ctx.fillStyle = "white";
   ctx.textAlign = "left";
   ctx.shadowBlur = 10;
   ctx.shadowColor = "black";
@@ -584,6 +583,13 @@ function drawText() {
   ctx.strokeText(characterNAME.options[characterNAME.selectedIndex].text, 343, 200);
   ctx.fillText(characterNAME.options[characterNAME.selectedIndex].text, 343, 200);
 
+  ctx.fillStyle = "rgb(255,255,255)"; 
+  ctx.textAlign="center";
+  ctx.font="13px NanumBarunGothic";
+  character_Quest = document.getElementById("character_Quest").value;
+  ctx.strokeText(character_Quest, canvas.width/2, 161);
+  ctx.fillText(character_Quest, canvas.width/2, 161);
+
 if(text_orange.checked) {
     ctx.fillStyle = "rgb(245,154,63)";
   }
@@ -591,17 +597,13 @@ if(text_orange.checked) {
    ctx.fillStyle = "rgb(255,255,255)"; 
   }
   //ctx.fillStyle = "rgb(255,255,255)";
-  
+  ctx.font="14.3px NanumBarunGothic";
+  ctx.textAlign = "left";
   const lines = document.getElementById("character_Conversation").value.split('\n');
   lines.forEach((conversation_Line, conversation_Index) => {
     ctx.strokeText(conversation_Line, 343, 236+(conversation_Index*23));
     ctx.fillText(conversation_Line, 343, 236+(conversation_Index*23));
   });
-  ctx.textAlign="center";
-  ctx.font="13px NanumBarunGothic";
-  character_Quest = document.getElementById("character_Quest").value;
-  ctx.strokeText(character_Quest, canvas.width/2, 161);
-  ctx.fillText(character_Quest, canvas.width/2, 161);
 
 }
 
