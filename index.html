@@ -193,6 +193,11 @@
     <label for="character_Quest" class="closer_label">퀘스트 이름을 입력</label>
   </dl>
 
+  <dl class = "closer_Info" style="display:none" id="name_Info">
+    <input type="input" class="closer_field" id="character_Draw_Name" onkeyup="inputText(event.keyCode);" onkeyup="inputBackSpace(event.keyCode);" required /> 
+    <label for="character_Draw_Name" class="closer_label">이름을 자유롭게 입력</label>
+  </dl>
+
 </div>
 
 <div class = "ZXZ_Select_Area">
@@ -208,9 +213,15 @@
   <input type="radio" id="quest_Select_Display" value="dlsplay" name="quest_Select" onclick="drawQuest();"/> <lavel for="quest_Select_Display">표시</lavel>
 </div>
 <div class = "text_color_Area">
-  텍스트 색상 변경(주황색)
-  <input type="radio" id="text_White" value="none" name="text_Color" checked/> <lavel for="text_White">하얀색</lavel>
-  <input type="radio" id="text_orange" value="dlsplay" name="text_Color"/> <lavel for="text_orange">주황색</lavel>
+  대사 독백 처리
+  <input type="radio" id="text_White" value="none" name="text_Color" checked/> <lavel for="text_White">일반 대사</lavel>
+  <input type="radio" id="text_orange" value="dlsplay" name="text_Color" /> <lavel for="text_orange">독백 처리</lavel>
+</div>
+
+<div class = "name_text_Area">
+  캐릭터 이름 자유 입력
+  <input type="radio" id="name_Draw_None" value="none" name="name_Change" onclick="drawName();" checked/> <lavel for="name_Draw_None">캐릭터 이름 초기값</lavel>
+  <input type="radio" id="name_Draw_Display" value="dlsplay" name="name_Change" onclick="drawName();" /> <lavel for="name_Draw_Display">캐릭터 이름 자유입력</lavel>
 </div>
 
 <div class="DL_button">
@@ -238,7 +249,7 @@
 }
 
 var canvas, ctx
-var character_Conversation, characterNAME, character_Quest
+var character_Conversation, characterNAME, character_Quest, character_Draw_Name
 var isFill = true;
 
 function Init() {
@@ -557,19 +568,16 @@ function drawQuest() {
   }
 }
 
-/*
-function colorChange() {
-  if(text_orange.checked) {
-    ctx.fillStyle = "rgb(245,154,63)";
+function drawName() {
+  if(name_Draw_Display.checked) {
+    document.getElementById("name_Info").style.display="block";
   }
   else {
-   ctx.fillStyle = "rgb(255,255,255)"; 
+    document.getElementById("name_Info").style.display="none";
+    document.getElementById("character_Draw_Name").value= ""; 
   }
 }
-*/
-function colorChange() {
 
-  }
 
 function drawText() {    
   ctx.font="14.3px NanumBarunGothic";
@@ -579,9 +587,17 @@ function drawText() {
   ctx.shadowColor = "black";
   ctx.fillStyle = "rgb(255,210,0)";
 
+if(name_Draw_Display.checked){
+  characterNAME = document.getElementById("character_Draw_Name").value;
+  ctx.strokeText(characterNAME, 343, 200);
+  ctx.fillText(characterNAME, 343, 200);
+      }
+  else {
   characterNAME = document.getElementById("character_class");
   ctx.strokeText(characterNAME.options[characterNAME.selectedIndex].text, 343, 200);
   ctx.fillText(characterNAME.options[characterNAME.selectedIndex].text, 343, 200);
+}
+  
 
   ctx.fillStyle = "rgb(255,255,255)"; 
   ctx.textAlign="center";
@@ -596,7 +612,7 @@ if(text_orange.checked) {
   else {
    ctx.fillStyle = "rgb(255,255,255)"; 
   }
-  //ctx.fillStyle = "rgb(255,255,255)";
+  
   ctx.font="14.3px NanumBarunGothic";
   ctx.textAlign = "left";
   const lines = document.getElementById("character_Conversation").value.split('\n');
@@ -607,19 +623,6 @@ if(text_orange.checked) {
 
 }
 
-/*
-function drawText_realtime() {
-    character_Conversation.oninput = function() {
-
-        ctx.fillStyle = "rgb(255,255,255)";
-        ctx.strokeText(document.getElementById("character_Conversation").value, canvas.width-9, 24);
-        ctx.fillText(document.getElementById("character_Conversation").value, canvas.width-9, 24);
-        clearCanvas();
-        drawImage();
-        drawText();
-    };  
-}
-*/
 
 function updateCanvas() {
 //  drawText_realtime();
