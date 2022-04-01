@@ -82,5 +82,6 @@ var bg_options = [
 { "bg_Text" : "이벤트 : 발렌타인", "bg_Value" : "E_VALENTINE"},
 { "bg_Text" : "이벤트 : 4월", "bg_Value" : "E_APRIL"},
 { "bg_Text" : "마이룸", "bg_Value" : "E_MYROOM"},
-{ "bg_Text" : "이벤트 : 도서관", "bg_Value" : "E_LIBRARY"} 
+{ "bg_Text" : "이벤트 : 도서관", "bg_Value" : "E_LIBRARY"},
+{ "bg_Text" : "블랙", "bg_Value" : "BLACK"}  
 ]
